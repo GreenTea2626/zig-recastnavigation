@@ -13,6 +13,8 @@ pub fn run_demo() !void {
 
     // Create Recast Navmesh
 
+    std.debug.print("ok1", .{});
+
     var nav_ctx: Recast.rcContext = undefined;
     nav_ctx.init(false);
     defer nav_ctx.deinit();
@@ -140,6 +142,8 @@ pub fn run_demo() !void {
             break;
         }
 
+        std.debug.print("Corner count: {d}", .{corner_count});
+
         const to_target = .{
             corner_verts[0][0] - pos[0],
             corner_verts[0][1] - pos[1],
@@ -163,4 +167,6 @@ pub fn run_demo() !void {
             break;
         }
     }
+
+    std.debug.print("It works?", .{});
 }

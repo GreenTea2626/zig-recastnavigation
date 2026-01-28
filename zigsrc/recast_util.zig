@@ -26,7 +26,7 @@ pub fn generateConfig(game_config: GameConfig) Recast.rcConfig {
     const max_edge_len = walkable_radius * 8;
     const tile_size = game_config.tile_size;
     const border_size = walkable_radius + 3; // from sample
-    const padding =  cell_size_xz * @as(f32, @floatFromInt(border_size));
+    const padding = cell_size_xz * @as(f32, @floatFromInt(border_size));
 
     var config: Recast.rcConfig = .{
         .width = tile_size + border_size * 2, // from sample
@@ -87,8 +87,8 @@ pub fn rasterizePolygonSoup(
     const triangle_count = triangles.len / 3;
 
     const allocator = std.heap.page_allocator;
-    var triangle_areas = std.ArrayList(u8).init(allocator);
-    triangle_areas.appendNTimes(0, triangle_count) catch unreachable;
+    var triangle_areas = try std.ArrayList(u8).initCapacity(allocator, 0);
+    triangle_areas.appendNTimes(allocator, 0, triangle_count) catch unreachable;
 
     Recast.rcMarkWalkableTriangles(
         nav_ctx,

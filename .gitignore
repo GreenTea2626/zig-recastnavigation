@@ -1,3 +1,9 @@
+## zig
+.zig-cache
+.zig-out
+
+.vscode
+
 ## Compiled source #
 *.com
 *.class
