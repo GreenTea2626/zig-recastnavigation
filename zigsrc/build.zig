@@ -7,6 +7,7 @@ pub fn build(b: *std.Build) void {
 
     const exe = b.addExecutable(.{
         .name = "ZigNavDemo",
+        .use_llvm = true,
         .root_module = b.createModule(.{
             .root_source_file = b.path("demo.zig"),
             .target = target,
@@ -64,7 +65,7 @@ pub fn build(b: *std.Build) void {
             "DetourCrowd/Include/DetourPathCorridor_glue.cpp",
             "DetourCrowd/Source/DetourPathCorridor.cpp",
         },
-        .flags = .{},
+        .flags = &.{},
     });
 
     b.installArtifact(exe);
