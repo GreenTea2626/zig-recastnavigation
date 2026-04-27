@@ -49,6 +49,7 @@ pub fn build(b: *Build) void {
             "Recast/Source/RecastMeshDetail.cpp",
             "Recast/Source/RecastRasterization.cpp",
             "Recast/Source/RecastRegion.cpp",
+            "DebugUtils/Source/DebugDraw.cpp",
             "DebugUtils/Source/DetourDebugDraw.cpp",
             "DebugUtils/Include/DetourDebugDraw_glue.cpp",
             "Detour/Include/DetourAlloc_glue.cpp",
