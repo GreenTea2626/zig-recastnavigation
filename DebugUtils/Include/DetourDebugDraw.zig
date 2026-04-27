@@ -4,13 +4,38 @@ const std = @import("std");
 
 pub const DrawNavMeshFlags = extern struct {
     bits: c_int = 0,
-
     pub const DU_DRAWNAVMESH_OFFMESHCONS: DrawNavMeshFlags = .{ .bits = @as(c_uint, @intCast(1)) };
     pub const DU_DRAWNAVMESH_CLOSEDLIST: DrawNavMeshFlags = .{ .bits = @as(c_uint, @intCast(2)) };
     pub const DU_DRAWNAVMESH_COLOR_TILES: DrawNavMeshFlags = .{ .bits = @as(c_uint, @intCast(4)) };
-
     // pub usingnamespace cpp.FlagsMixin(DrawNavMeshFlags);
 };
+
+extern fn _1_duDebugDrawNavMesh_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh, flags: u8) void;
+pub const duDebugDrawNavMesh = _1_duDebugDrawNavMesh_;
+
+extern fn _1_duDebugDrawNavMeshWithClosedList_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh, query: *const dtNavMeshQuery, flags: u8) void;
+pub const duDebugDrawNavMeshWithClosedList = _1_duDebugDrawNavMeshWithClosedList_;
+
+extern fn _1_duDebugDrawNavMeshNodes_(dd: [*c]duDebugDraw, query: *const dtNavMeshQuery) void;
+pub const duDebugDrawNavMeshNodes = _1_duDebugDrawNavMeshNodes_;
+
+extern fn _1_duDebugDrawNavMeshBVTree_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh) void;
+pub const duDebugDrawNavMeshBVTree = _1_duDebugDrawNavMeshBVTree_;
+
+extern fn _1_duDebugDrawNavMeshPortals_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh) void;
+pub const duDebugDrawNavMeshPortals = _1_duDebugDrawNavMeshPortals_;
+
+extern fn _1_duDebugDrawNavMeshPolysWithFlags_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh, polyFlags: c_ushort, col: c_uint) void;
+pub const duDebugDrawNavMeshPolysWithFlags = _1_duDebugDrawNavMeshPolysWithFlags_;
+
+extern fn _1_duDebugDrawNavMeshPoly_(dd: [*c]duDebugDraw, mesh: *const dtNavMesh, ref: dtPolyRef, col: c_uint) void;
+pub const duDebugDrawNavMeshPoly = _1_duDebugDrawNavMeshPoly_;
+
+extern fn _1_duDebugDrawTileCacheLayerAreas_(dd: [*c]duDebugDraw, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
+pub const duDebugDrawTileCacheLayerAreas = _1_duDebugDrawTileCacheLayerAreas_;
+
+extern fn _1_duDebugDrawTileCacheLayerRegions_(dd: [*c]duDebugDraw, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
+pub const duDebugDrawTileCacheLayerRegions = _1_duDebugDrawTileCacheLayerRegions_;
 
 extern fn _1_duDebugDrawTileCacheContours_(dd: [*c]duDebugDraw, lcset: *const dtTileCacheContourSet, orig: [*c]const f32, cs: f32, ch: f32) void;
 pub const duDebugDrawTileCacheContours = _1_duDebugDrawTileCacheContours_;
@@ -19,7 +44,10 @@ extern fn _1_duDebugDrawTileCachePolyMesh_(dd: [*c]duDebugDraw, lmesh: *const dt
 pub const duDebugDrawTileCachePolyMesh = _1_duDebugDrawTileCachePolyMesh_;
 
 // opaques
-
 const duDebugDraw = anyopaque;
+const dtNavMesh = anyopaque;
+const dtNavMeshQuery = anyopaque;
+const dtPolyRef = u32; // This is typically a typedef for unsigned int in Detour
+const dtTileCacheLayer = anyopaque;
 const dtTileCacheContourSet = anyopaque;
 const dtTileCachePolyMesh = anyopaque;

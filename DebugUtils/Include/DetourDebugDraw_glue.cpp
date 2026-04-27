@@ -2,5 +2,57 @@
 #include <new>
 #include "DetourDebugDraw.h"
 
-extern "C" void _1_duDebugDrawTileCacheContours_(duDebugDraw * dd, const struct dtTileCacheContourSet & lcset, const float * orig, const float cs, const float ch) { ::duDebugDrawTileCacheContours(dd, lcset, orig, cs, ch); }
-extern "C" void _1_duDebugDrawTileCachePolyMesh_(duDebugDraw * dd, const struct dtTileCachePolyMesh & lmesh, const float * orig, const float cs, const float ch) { ::duDebugDrawTileCachePolyMesh(dd, lmesh, orig, cs, ch); }
+extern "C" void _1_duDebugDrawNavMesh_(duDebugDraw *dd, const dtNavMesh &mesh, unsigned char flags)
+{
+    ::duDebugDrawNavMesh(dd, mesh, flags);
+}
+
+extern "C" void _1_duDebugDrawNavMeshWithClosedList_(duDebugDraw *dd, const dtNavMesh &mesh, const dtNavMeshQuery &query, unsigned char flags)
+{
+    ::duDebugDrawNavMeshWithClosedList(dd, mesh, query, flags);
+}
+
+extern "C" void _1_duDebugDrawNavMeshNodes_(duDebugDraw *dd, const dtNavMeshQuery &query)
+{
+    ::duDebugDrawNavMeshNodes(dd, query);
+}
+
+extern "C" void _1_duDebugDrawNavMeshBVTree_(duDebugDraw *dd, const dtNavMesh &mesh)
+{
+    ::duDebugDrawNavMeshBVTree(dd, mesh);
+}
+
+extern "C" void _1_duDebugDrawNavMeshPortals_(duDebugDraw *dd, const dtNavMesh &mesh)
+{
+    ::duDebugDrawNavMeshPortals(dd, mesh);
+}
+
+extern "C" void _1_duDebugDrawNavMeshPolysWithFlags_(duDebugDraw *dd, const dtNavMesh &mesh, const unsigned short polyFlags, const unsigned int col)
+{
+    ::duDebugDrawNavMeshPolysWithFlags(dd, mesh, polyFlags, col);
+}
+
+extern "C" void _1_duDebugDrawNavMeshPoly_(duDebugDraw *dd, const dtNavMesh &mesh, dtPolyRef ref, const unsigned int col)
+{
+    ::duDebugDrawNavMeshPoly(dd, mesh, ref, col);
+}
+
+extern "C" void _1_duDebugDrawTileCacheLayerAreas_(duDebugDraw *dd, const dtTileCacheLayer &layer, const float cs, const float ch)
+{
+    ::duDebugDrawTileCacheLayerAreas(dd, layer, cs, ch);
+}
+
+extern "C" void _1_duDebugDrawTileCacheLayerRegions_(duDebugDraw *dd, const dtTileCacheLayer &layer, const float cs, const float ch)
+{
+    ::duDebugDrawTileCacheLayerRegions(dd, layer, cs, ch);
+}
+
+extern "C" void _1_duDebugDrawTileCacheContours_(duDebugDraw *dd, const dtTileCacheContourSet &lcset, const float *orig, const float cs, const float ch)
+{
+    ::duDebugDrawTileCacheContours(dd, lcset, orig, cs, ch);
+}
+
+extern "C" void _1_duDebugDrawTileCachePolyMesh_(duDebugDraw *dd, const dtTileCachePolyMesh &lmesh, const float *orig, const float cs, const float ch)
+{
+    ::duDebugDrawTileCachePolyMesh(dd, lmesh, orig, cs, ch);
+}
