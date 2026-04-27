@@ -51,6 +51,7 @@ pub fn build(b: *Build) void {
             "Recast/Source/RecastRegion.cpp",
             "DebugUtils/Source/DebugDraw.cpp",
             "DebugUtils/Source/DetourDebugDraw.cpp",
+            "DebugUtils/Source/DebugDrawBridge.cpp",
             "DebugUtils/Include/DetourDebugDraw_glue.cpp",
             "Detour/Include/DetourAlloc_glue.cpp",
             "Detour/Include/DetourAssert_glue.cpp",
