@@ -10,37 +10,37 @@ pub const DrawNavMeshFlags = extern struct {
     // pub usingnamespace cpp.FlagsMixin(DrawNavMeshFlags);
 };
 
-extern fn _1_duDebugDrawNavMesh_(dd: [*c]anyopaque, mesh: *const dtNavMesh, flags: u8) void;
+extern fn _1_duDebugDrawNavMesh_(dd: *anyopaque, mesh: *const dtNavMesh, flags: u8) void;
 pub const duDebugDrawNavMesh = _1_duDebugDrawNavMesh_;
 
-extern fn _1_duDebugDrawNavMeshWithClosedList_(dd: [*c]anyopaque, mesh: *const dtNavMesh, query: *const dtNavMeshQuery, flags: u8) void;
+extern fn _1_duDebugDrawNavMeshWithClosedList_(dd: *anyopaque, mesh: *const dtNavMesh, query: *const dtNavMeshQuery, flags: u8) void;
 pub const duDebugDrawNavMeshWithClosedList = _1_duDebugDrawNavMeshWithClosedList_;
 
-extern fn _1_duDebugDrawNavMeshNodes_(dd: [*c]anyopaque, query: *const dtNavMeshQuery) void;
+extern fn _1_duDebugDrawNavMeshNodes_(dd: *anyopaque, query: *const dtNavMeshQuery) void;
 pub const duDebugDrawNavMeshNodes = _1_duDebugDrawNavMeshNodes_;
 
-extern fn _1_duDebugDrawNavMeshBVTree_(dd: [*c]anyopaque, mesh: *const dtNavMesh) void;
+extern fn _1_duDebugDrawNavMeshBVTree_(dd: *anyopaque, mesh: *const dtNavMesh) void;
 pub const duDebugDrawNavMeshBVTree = _1_duDebugDrawNavMeshBVTree_;
 
-extern fn _1_duDebugDrawNavMeshPortals_(dd: [*c]anyopaque, mesh: *const dtNavMesh) void;
+extern fn _1_duDebugDrawNavMeshPortals_(dd: *anyopaque, mesh: *const dtNavMesh) void;
 pub const duDebugDrawNavMeshPortals = _1_duDebugDrawNavMeshPortals_;
 
-extern fn _1_duDebugDrawNavMeshPolysWithFlags_(dd: [*c]anyopaque, mesh: *const dtNavMesh, polyFlags: c_ushort, col: c_uint) void;
+extern fn _1_duDebugDrawNavMeshPolysWithFlags_(dd: *anyopaque, mesh: *const dtNavMesh, polyFlags: c_ushort, col: c_uint) void;
 pub const duDebugDrawNavMeshPolysWithFlags = _1_duDebugDrawNavMeshPolysWithFlags_;
 
-extern fn _1_duDebugDrawNavMeshPoly_(dd: [*c]anyopaque, mesh: *const dtNavMesh, ref: dtPolyRef, col: c_uint) void;
+extern fn _1_duDebugDrawNavMeshPoly_(dd: *anyopaque, mesh: *const dtNavMesh, ref: dtPolyRef, col: c_uint) void;
 pub const duDebugDrawNavMeshPoly = _1_duDebugDrawNavMeshPoly_;
 
-extern fn _1_duDebugDrawTileCacheLayerAreas_(dd: [*c]anyopaque, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
+extern fn _1_duDebugDrawTileCacheLayerAreas_(dd: *anyopaque, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
 pub const duDebugDrawTileCacheLayerAreas = _1_duDebugDrawTileCacheLayerAreas_;
 
-extern fn _1_duDebugDrawTileCacheLayerRegions_(dd: [*c]anyopaque, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
+extern fn _1_duDebugDrawTileCacheLayerRegions_(dd: *anyopaque, layer: *const dtTileCacheLayer, cs: f32, ch: f32) void;
 pub const duDebugDrawTileCacheLayerRegions = _1_duDebugDrawTileCacheLayerRegions_;
 
-extern fn _1_duDebugDrawTileCacheContours_(dd: [*c]anyopaque, lcset: *const dtTileCacheContourSet, orig: [*c]const f32, cs: f32, ch: f32) void;
+extern fn _1_duDebugDrawTileCacheContours_(dd: *anyopaque, lcset: *const dtTileCacheContourSet, orig: [*c]const f32, cs: f32, ch: f32) void;
 pub const duDebugDrawTileCacheContours = _1_duDebugDrawTileCacheContours_;
 
-extern fn _1_duDebugDrawTileCachePolyMesh_(dd: [*c]anyopaque, lmesh: *const dtTileCachePolyMesh, orig: [*c]const f32, cs: f32, ch: f32) void;
+extern fn _1_duDebugDrawTileCachePolyMesh_(dd: *anyopaque, lmesh: *const dtTileCachePolyMesh, orig: [*c]const f32, cs: f32, ch: f32) void;
 pub const duDebugDrawTileCachePolyMesh = _1_duDebugDrawTileCachePolyMesh_;
 
 // opaques
