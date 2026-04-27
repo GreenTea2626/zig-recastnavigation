@@ -1,5 +1,6 @@
 .{
-    .name = "zignav",
-    .version = "2024.1.1",
+    .name = .zignav,
+    .version = "2026.4.1",
+    .fingerprint = 0xae613d47d5bf8c13,
     .paths = .{"."},
 }

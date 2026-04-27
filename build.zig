@@ -11,6 +11,7 @@ pub fn build(b: *Build) void {
     });
     zignav.addIncludePath(b.path("Recast/Include"));
     zignav.addIncludePath(b.path("Detour/Include"));
+    zignav.addIncludePath(b.path("DebugUtils/Include"));
     zignav.addIncludePath(b.path("DetourTileCache/Include"));
     zignav.addIncludePath(b.path("DetourCrowd/Include"));
 
@@ -28,6 +29,7 @@ pub fn build(b: *Build) void {
 
     zignav_c_cpp.root_module.addIncludePath(b.path("Recast/Include"));
     zignav_c_cpp.root_module.addIncludePath(b.path("Detour/Include"));
+    zignav_c_cpp.root_module.addIncludePath(b.path("DebugUtils/Include"));
     zignav_c_cpp.root_module.addIncludePath(b.path("DetourTileCache/Include"));
     zignav_c_cpp.root_module.addIncludePath(b.path("DetourCrowd/Include"));
     zignav_c_cpp.root_module.link_libc = true;
@@ -47,6 +49,7 @@ pub fn build(b: *Build) void {
             "Recast/Source/RecastMeshDetail.cpp",
             "Recast/Source/RecastRasterization.cpp",
             "Recast/Source/RecastRegion.cpp",
+            "DebugUtils/Include/DetourDebugDraw_glue.cpp",
             "Detour/Include/DetourAlloc_glue.cpp",
             "Detour/Include/DetourAssert_glue.cpp",
             "Detour/Include/DetourCommon_glue.cpp",

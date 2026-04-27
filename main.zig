@@ -1,5 +1,6 @@
 pub const Recast = @import("Recast/Include/Recast.zig");
 
+pub const DetourDebugDraw = @import("DebugUtils/Include/DetourDebugDraw.zig");
 pub const DetourNavMesh = @import("Detour/Include/DetourNavMesh.zig");
 pub const DetourNavMeshBuilder = @import("Detour/Include/DetourNavMeshBuilder.zig");
 pub const DetourNavMeshQuery = @import("Detour/Include/DetourNavMeshQuery.zig");
